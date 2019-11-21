@@ -1,0 +1,25 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block title %}Acerca de{% endblock %}
+
+{% block background %}{% static 'core/img/about-bg.jpg' %}{% endblock %}
+
+{% block headers %}
+    <h1>Acerca de</h1>
+    <span class="subheading">Biografía</span>
+{% endblock %}
+
+{% block content %}
+<div class="row">  
+    <div class="col-lg-3 col-md-4 offset-lg-1">
+        <img class="img-fluid avatar" src="{% static 'core/img/avatar.jpg' %}" alt="">
+    </div>
+    <div class="col-lg-7 col-md-8">
+        <h2 class="section-heading">Sebastian Bogado</h2>   
+        <p>Vivo en Buenos Aires, soy Analista de Sistemas y tengo conocimientos en el negocio corporativo ocupando diferentes roles durante varios años como Soporte de aplicaciones nivel 1 y 2, Analista de procesos y Analista funcional</p>
+        <p>Tengo pasión por todo lo relacionado con las nuevas tecnologías y actualmente me estoy especializando en el desarrollo web.</p>
+    </div>
+</div>
+{% endblock %}
