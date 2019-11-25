@@ -13,27 +13,19 @@
 
 {% block content %}
 
-{{projects}}
+    {% for projects in projects %}
 
-    <!-- Proyecto -->
-<div class="row project">  	
-    <div class="col-lg-3 col-md-4 offset-lg-1">
-        <img class="img-fluid" src="{% static 'core/img/home-bg.jpg' %}" alt="">
-    </div>
-    <div class="col-lg-7 col-md-8">
-        <h2 class="section-heading title">Cv Online</h2>   
-        <p>Sitio web realizado en html, css y javascript que realice siguiendo un tutorial de You Tube donde describia algunos detalles de mi hoja de vida.</p>
-         <p><a href="https://sbogado87.github.io/cv">Más información</a></p> 
-    </div>
-</div>
-<div class="row project">  	
-    <div class="col-lg-3 col-md-4 offset-lg-1">
-        <img class="img-fluid" src="{% static 'core/img/lulo.jpg' %}" alt="">
-    </div>
-    <div class="col-lg-7 col-md-8">
-        <h2 class="section-heading title">Tienda Lulo</h2>   
-        <p>Fan page realizada para la venta de productos de ropa y accesorios femenino.</p>
-        <p><a href="https://www.facebook.com/tiendalulo">Más información</a></p> 
-    </div>
-</div>
+        <div class="row project">  	
+            <div class="col-lg-3 col-md-4 offset-lg-1">
+                <img class="img-fluid" src="{{projects.image.url}}" alt="">
+            </div>
+            <div class="col-lg-7 col-md-8">
+                <h2 class="section-heading title">{{ projects.title }}</h2>   
+                <p>{{ projects.description }}</p>
+                {% if project.link %}
+               <p><a href="{{ project.link }}">Más información</a></p>  
+               {% endif %}
+            </div>
+        </div>
+    {% endfor %}
 {% endblock %}
